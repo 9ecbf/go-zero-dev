@@ -1,0 +1,40 @@
+{
+  "build": {
+    "context": ".",
+    "dockerfile": "Dockerfile",
+    "args": {
+      "GOLANG_VERSION": "1.21",
+      "USER": "dev",
+      "WORKSPACE": "go-zero-dev",
+      "PROFILE": "dev"
+    }
+  },
+  "remoteUser": "dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "golang.Go",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "Postman.postman-for-vscode",
+        "redhat.vscode-yaml",
+        "shardulm94.trailing-spaces",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "xiaoxin-technology.goctl"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  },
+  "features": {
+    "docker-in-docker": {
+      "moby": true,
+      "version": "latest"
+    }
+  },
+  "runArgs": ["--init"]
+}

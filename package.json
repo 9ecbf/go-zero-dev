@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "new": "scripts/create-service",
+    "start": "scripts/start-service"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

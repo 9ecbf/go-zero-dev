@@ -1,0 +1,8 @@
+#!/bin/bash
+
+svc=$1
+
+[ ! -d "services/$svc" ] && echo "Service '$svc' doesn't exist." && exit 1
+
+echo "Starting '$svc'..."
+cd services/$svc && go run $svc.go -f etc/$svc-api.yaml

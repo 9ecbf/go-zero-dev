@@ -1,0 +1,14 @@
+#!/bin/bash
+
+svc=$1
+
+[ -d "services/$svc" ] && echo "Service '$svc' exists." && exit 1
+
+clean() {
+    rm -rf services/$svc
+}
+trap clean INT TERM ERR
+
+echo "Creating service '$svc'..."
+goctl api new services/$svc && cd services/$svc && go mod tidy
+echo "Service '$svc' created."
